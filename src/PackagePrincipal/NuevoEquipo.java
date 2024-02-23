@@ -69,6 +69,11 @@ public class NuevoEquipo extends javax.swing.JFrame {
         nv2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
 
         jButton1.setText("Agregar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         nv2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 310, 110, -1));
         nv2.add(tf_paisequipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 120, 310, -1));
         nv2.add(tf_NombreEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 160, 310, -1));
@@ -88,6 +93,10 @@ public class NuevoEquipo extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments

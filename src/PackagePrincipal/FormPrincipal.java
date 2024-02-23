@@ -58,6 +58,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         mb_Opciones.add(mi_CrearEquipos);
 
         mi_CrearJugadores.setText("Crear Jugadores");
+        mi_CrearJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_CrearJugadoresActionPerformed(evt);
+            }
+        });
         mb_Opciones.add(mi_CrearJugadores);
 
         Transferencias.setText("Transferencias");
@@ -94,6 +99,12 @@ public class FormPrincipal extends javax.swing.JFrame {
         ventana2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_mi_CrearEquiposActionPerformed
+
+    private void mi_CrearJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_CrearJugadoresActionPerformed
+        NuevoJugador ventana3= new NuevoJugador();
+        ventana3.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mi_CrearJugadoresActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
