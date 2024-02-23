@@ -66,6 +66,11 @@ public class FormPrincipal extends javax.swing.JFrame {
         mb_Opciones.add(mi_CrearJugadores);
 
         Transferencias.setText("Transferencias");
+        Transferencias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TransferenciasActionPerformed(evt);
+            }
+        });
         mb_Opciones.add(Transferencias);
 
         jMenuBar2.add(mb_Opciones);
@@ -105,6 +110,12 @@ public class FormPrincipal extends javax.swing.JFrame {
         ventana3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_mi_CrearJugadoresActionPerformed
+
+    private void TransferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferenciasActionPerformed
+        Transferencias ventana4= new Transferencias();
+        ventana4.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_TransferenciasActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
