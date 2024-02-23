@@ -14,6 +14,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         perdonMirey = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jToolBar1 = new javax.swing.JToolBar();
         jMenuBar2 = new javax.swing.JMenuBar();
         mb_Opciones = new javax.swing.JMenu();
         mi_CrearEquipos = new javax.swing.JMenuItem();
@@ -34,12 +35,26 @@ public class FormPrincipal extends javax.swing.JFrame {
         jLabel1.setText("BIENVENIDO A BOROA LEAGUE FANTASY");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
 
+        jToolBar1.setBackground(new java.awt.Color(51, 153, 255));
+        jToolBar1.setRollover(true);
+        jPanel1.add(jToolBar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 20, 330, 30));
+
         jMenuBar2.setBackground(new java.awt.Color(0, 0, 153));
 
         mb_Opciones.setBackground(new java.awt.Color(255, 255, 255));
         mb_Opciones.setText("Opciones");
+        mb_Opciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mb_OpcionesActionPerformed(evt);
+            }
+        });
 
         mi_CrearEquipos.setText("Crear Equipos");
+        mi_CrearEquipos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mi_CrearEquiposActionPerformed(evt);
+            }
+        });
         mb_Opciones.add(mi_CrearEquipos);
 
         mi_CrearJugadores.setText("Crear Jugadores");
@@ -69,6 +84,16 @@ public class FormPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mb_OpcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mb_OpcionesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mb_OpcionesActionPerformed
+
+    private void mi_CrearEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_CrearEquiposActionPerformed
+        NuevoEquipo ventana2= new NuevoEquipo();
+        ventana2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_mi_CrearEquiposActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -107,6 +132,7 @@ public class FormPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JToolBar jToolBar1;
     private javax.swing.JMenu mb_Ayuda;
     private javax.swing.JMenu mb_Opciones;
     private javax.swing.JMenuItem mi_CrearEquipos;
