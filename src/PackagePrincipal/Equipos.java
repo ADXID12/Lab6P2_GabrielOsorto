@@ -1,17 +1,21 @@
 package PackagePrincipal;
 
+import java.util.ArrayList;
+
 public class Equipos {
 
     private String paisEquipo, nombre, ciudad, estadio;
+    private ArrayList<Jugador> jugadores = new ArrayList<>();
 
     public Equipos() {
     }
 
-    public Equipos(String paisEquipo, String nombre, String ciudad, String estadio) {
+    public Equipos(String paisEquipo, String nombre, String ciudad, String estadio, ArrayList<Jugador> jugadores) {
         this.paisEquipo = paisEquipo;
         this.nombre = nombre;
         this.ciudad = ciudad;
         this.estadio = estadio;
+        this.jugadores = jugadores;
     }
 
     public String getPaisEquipo() {
@@ -45,5 +49,14 @@ public class Equipos {
     public void setEstadio(String estadio) {
         this.estadio = estadio;
     }
+
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
     
+
 }
