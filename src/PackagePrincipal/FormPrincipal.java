@@ -12,20 +12,45 @@ public class FormPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTabbedPane1 = new javax.swing.JTabbedPane();
+        perdonMirey = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         mb_Opciones = new javax.swing.JMenu();
+        mi_CrearEquipos = new javax.swing.JMenuItem();
+        mi_CrearJugadores = new javax.swing.JMenuItem();
+        Transferencias = new javax.swing.JMenuItem();
         mb_Ayuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(51, 153, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, 610, 550));
 
+        perdonMirey.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Portada Jueguit.png"))); // NOI18N
+        jPanel1.add(perdonMirey, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 70, 210, 340));
+
+        jLabel1.setFont(new java.awt.Font("Arial Narrow", 1, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setText("BIENVENIDO A BOROA LEAGUE FANTASY");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, -1, -1));
+
+        jMenuBar2.setBackground(new java.awt.Color(0, 0, 153));
+
+        mb_Opciones.setBackground(new java.awt.Color(255, 255, 255));
         mb_Opciones.setText("Opciones");
+
+        mi_CrearEquipos.setText("Crear Equipos");
+        mb_Opciones.add(mi_CrearEquipos);
+
+        mi_CrearJugadores.setText("Crear Jugadores");
+        mb_Opciones.add(mi_CrearJugadores);
+
+        Transferencias.setText("Transferencias");
+        mb_Opciones.add(Transferencias);
+
         jMenuBar2.add(mb_Opciones);
 
+        mb_Ayuda.setBackground(new java.awt.Color(255, 255, 255));
         mb_Ayuda.setText("Ayuda");
         jMenuBar2.add(mb_Ayuda);
 
@@ -39,7 +64,7 @@ public class FormPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 497, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,10 +103,14 @@ public class FormPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Transferencias;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JMenu mb_Ayuda;
     private javax.swing.JMenu mb_Opciones;
+    private javax.swing.JMenuItem mi_CrearEquipos;
+    private javax.swing.JMenuItem mi_CrearJugadores;
+    private javax.swing.JLabel perdonMirey;
     // End of variables declaration//GEN-END:variables
 }
