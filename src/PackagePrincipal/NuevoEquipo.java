@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class NuevoEquipo extends javax.swing.JFrame {
-
+    
     static ArrayList<Equipos> equipos = new ArrayList<>();
-
+    
     public NuevoEquipo() {
         initComponents();
         this.setResizable(false);
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -93,9 +93,12 @@ public class NuevoEquipo extends javax.swing.JFrame {
         Equipos EquipoNuevo = (new Equipos(PaisNuevoEquipo, NombreNuevoEquipo, NombreNuevaCiudad, NombreNuevoEstadio, null));
         equipos.add(EquipoNuevo);
         JOptionPane.showMessageDialog(nv2, "EQUIPO AGREGADO EXITOSAMENTE");
-
+        tf_paisequipo.setText("");
+        tf_NombreEquipo.setText("");
+        tf_CiudadEquipo.setText("");
+        tf_CiudadEquipo.setText("");
     }//GEN-LAST:event_jButton1MouseClicked
-
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

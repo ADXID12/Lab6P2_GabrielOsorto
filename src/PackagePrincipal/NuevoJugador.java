@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package PackagePrincipal;
 
 import java.util.ArrayList;
@@ -91,7 +87,7 @@ public class NuevoJugador extends javax.swing.JFrame {
         String NombreNuevoFutbolista = tf_NombreJugador.getText();
         String PosicionNuevoFutbolista = (String) cb_PosicionJugador.getSelectedItem();
         int EdadNuevoJugador = (int) sp_EdadJugador.getValue();
-        Jugador nuevoJugador= (new Jugador(NombreNuevoFutbolista,PosicionNuevoFutbolista,EdadNuevoJugador));
+        Jugador nuevoJugador = (new Jugador(NombreNuevoFutbolista, PosicionNuevoFutbolista, EdadNuevoJugador));
         jugadores.add(nuevoJugador);
         JOptionPane.showMessageDialog(pn_CrearJugador, "Jugador Agregado Exitosamente");
         tf_NombreJugador.setText("");
@@ -99,9 +95,6 @@ public class NuevoJugador extends javax.swing.JFrame {
         sp_EdadJugador.setValue(15);
     }//GEN-LAST:event_jButton1MouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
