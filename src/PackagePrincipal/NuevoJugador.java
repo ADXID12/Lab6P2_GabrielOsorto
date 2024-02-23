@@ -4,17 +4,18 @@
  */
 package PackagePrincipal;
 
-/**
- *
- * @author Jahir Corrales
- */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.SpinnerNumberModel;
+
 public class NuevoJugador extends javax.swing.JFrame {
 
-    /**
-     * Creates new form NuevoJugador
-     */
+    ArrayList<Jugador> jugadores = new ArrayList<>();
+
     public NuevoJugador() {
         initComponents();
+        SpinnerNumberModel sp = new SpinnerNumberModel(15, 15, 35, 1);
+        sp_EdadJugador.setModel(sp);
     }
 
     /**
@@ -24,7 +25,7 @@ public class NuevoJugador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        pn_CrearJugador = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -36,50 +37,67 @@ public class NuevoJugador extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(51, 51, 255));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        pn_CrearJugador.setBackground(new java.awt.Color(51, 51, 255));
+        pn_CrearJugador.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Crear Jugador");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
+        pn_CrearJugador.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 40, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Nombre");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
+        pn_CrearJugador.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, -1, -1));
 
         jLabel3.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("Edad");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
+        pn_CrearJugador.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial Black", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Posicion");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-        jPanel1.add(tf_NombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 300, -1));
-        jPanel1.add(sp_EdadJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 170, -1));
+        pn_CrearJugador.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
+        pn_CrearJugador.add(tf_NombreJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 300, -1));
+        pn_CrearJugador.add(sp_EdadJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 140, 170, -1));
 
-        cb_PosicionJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel1.add(cb_PosicionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
+        cb_PosicionJugador.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Portero", "Defensa", "Mediocampista", "Delantero" }));
+        pn_CrearJugador.add(cb_PosicionJugador, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, -1, -1));
 
         jButton1.setText("Agregar");
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 100, -1));
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
+        pn_CrearJugador.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 100, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
+            .addComponent(pn_CrearJugador, javax.swing.GroupLayout.DEFAULT_SIZE, 473, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
+            .addComponent(pn_CrearJugador, javax.swing.GroupLayout.DEFAULT_SIZE, 312, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String NombreNuevoFutbolista = tf_NombreJugador.getText();
+        String PosicionNuevoFutbolista = (String) cb_PosicionJugador.getSelectedItem();
+        int EdadNuevoJugador = (int) sp_EdadJugador.getValue();
+        Jugador nuevoJugador= (new Jugador(NombreNuevoFutbolista,PosicionNuevoFutbolista,EdadNuevoJugador));
+        jugadores.add(nuevoJugador);
+        JOptionPane.showMessageDialog(pn_CrearJugador, "Jugador Agregado Exitosamente");
+        tf_NombreJugador.setText("");
+        cb_PosicionJugador.setSelectedItem(0);
+        sp_EdadJugador.setValue(15);
+    }//GEN-LAST:event_jButton1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -123,7 +141,7 @@ public class NuevoJugador extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel pn_CrearJugador;
     private javax.swing.JSpinner sp_EdadJugador;
     private javax.swing.JTextField tf_NombreJugador;
     // End of variables declaration//GEN-END:variables

@@ -1,11 +1,12 @@
-
 package PackagePrincipal;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class NuevoEquipo extends javax.swing.JFrame {
-        static ArrayList<Equipos>equipos= new ArrayList<>();
+
+    static ArrayList<Equipos> equipos = new ArrayList<>();
+
     public NuevoEquipo() {
         initComponents();
         this.setResizable(false);
@@ -85,14 +86,14 @@ public class NuevoEquipo extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String PaisNuevoEquipo=tf_paisequipo.getText();
-        String NombreNuevoEquipo= tf_NombreEquipo.getText();
-        String NombreNuevaCiudad= tf_CiudadEquipo.getText();
-        String NombreNuevoEstadio= tf_EstadioEquipo.getText();
-        Equipos EquipoNuevo= (new Equipos(PaisNuevoEquipo,NombreNuevoEquipo,NombreNuevaCiudad,NombreNuevoEstadio,null));
+        String PaisNuevoEquipo = tf_paisequipo.getText();
+        String NombreNuevoEquipo = tf_NombreEquipo.getText();
+        String NombreNuevaCiudad = tf_CiudadEquipo.getText();
+        String NombreNuevoEstadio = tf_EstadioEquipo.getText();
+        Equipos EquipoNuevo = (new Equipos(PaisNuevoEquipo, NombreNuevoEquipo, NombreNuevaCiudad, NombreNuevoEstadio, null));
         equipos.add(EquipoNuevo);
         JOptionPane.showMessageDialog(nv2, "EQUIPO AGREGADO EXITOSAMENTE");
-        
+
     }//GEN-LAST:event_jButton1MouseClicked
 
     public static void main(String args[]) {

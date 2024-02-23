@@ -100,19 +100,19 @@ public class FormPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mb_OpcionesActionPerformed
 
     private void mi_CrearEquiposActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_CrearEquiposActionPerformed
-        NuevoEquipo ventana2= new NuevoEquipo();
+        NuevoEquipo ventana2 = new NuevoEquipo();
         ventana2.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_mi_CrearEquiposActionPerformed
 
     private void mi_CrearJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mi_CrearJugadoresActionPerformed
-        NuevoJugador ventana3= new NuevoJugador();
+        NuevoJugador ventana3 = new NuevoJugador();
         ventana3.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_mi_CrearJugadoresActionPerformed
 
     private void TransferenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TransferenciasActionPerformed
-        Transferencias ventana4= new Transferencias();
+        Transferencias ventana4 = new Transferencias();
         ventana4.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_TransferenciasActionPerformed
