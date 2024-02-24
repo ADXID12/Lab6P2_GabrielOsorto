@@ -1,12 +1,31 @@
 package PackagePrincipal;
 
+import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 
 public class Transferencias extends javax.swing.JFrame {
+
+    private ArrayList<Jugador> listajugadores = new ArrayList<>();
+    private ArrayList<Equipos> listaequipos = new ArrayList<>();
+
+    public void Jugadores(ArrayList listajugadores) {
+        this.listajugadores = listajugadores;
+    }
+
+    public void Equipos(ArrayList<Equipos> listaequipos) {
+        this.listaequipos = listaequipos;
+    }
 
     public Transferencias() {
         initComponents();
         this.setResizable(false);
+        if (!listajugadores.isEmpty()) {
+            DefaultListModel modelo = (DefaultListModel) jl_jugadores.getModel();
+            Jugador primerJugador = listajugadores.get(0);
+            modelo.addElement(primerJugador.getNombre());
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -26,6 +45,7 @@ public class Transferencias extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        bt_CargarInfo = new javax.swing.JButton();
 
         Editar.setText("Editar");
         jpop_MenuJugadores.add(Editar);
@@ -41,11 +61,6 @@ public class Transferencias extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Transferencias");
 
-        jl_jugadores.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jl_jugadores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jl_jugadoresMouseClicked(evt);
@@ -53,6 +68,9 @@ public class Transferencias extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jl_jugadores);
 
+        javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("root");
+        ArbolEquipos.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        ArbolEquipos.setToolTipText("Pais");
         ArbolEquipos.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 ArbolEquiposMouseClicked(evt);
@@ -70,34 +88,49 @@ public class Transferencias extends javax.swing.JFrame {
 
         jButton1.setText("Transferir");
 
+        bt_CargarInfo.setText("Cargar Info");
+        bt_CargarInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bt_CargarInfoMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(60, 60, 60)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(55, 55, 55))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(213, 213, 213)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel3)
                 .addGap(124, 124, 124))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(69, 69, 69)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 49, Short.MAX_VALUE)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(55, 55, 55))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(bt_CargarInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel1)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabel1))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(bt_CargarInfo)))
                 .addGap(13, 13, 13)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -109,7 +142,7 @@ public class Transferencias extends javax.swing.JFrame {
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 280, Short.MAX_VALUE)
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(96, 96, 96)
+                        .addGap(117, 117, 117)
                         .addComponent(jButton1)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
@@ -152,6 +185,27 @@ public class Transferencias extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jl_jugadoresMouseClicked
 
+    private void bt_CargarInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bt_CargarInfoMouseClicked
+        DefaultTreeModel modelo = (DefaultTreeModel) ArbolEquipos.getModel();
+        DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
+        raiz.removeAllChildren();
+        modelo.reload();
+
+        DefaultTreeModel m = (DefaultTreeModel) ArbolEquipos.getModel();
+        raiz = (DefaultMutableTreeNode) m.getRoot();
+        String paisNuevoEquipo = listaequipos.get(0).getPaisEquipo();
+        DefaultMutableTreeNode nodo_pais = new DefaultMutableTreeNode(paisNuevoEquipo);
+        String nombreEquipo = listaequipos.get(0).getNombre();
+        DefaultMutableTreeNode nodo_equipo = new DefaultMutableTreeNode(nombreEquipo);
+        String ciudadEquipo = listaequipos.get(0).getCiudad();
+        DefaultMutableTreeNode nodo_ciudad = new DefaultMutableTreeNode(ciudadEquipo);
+        nodo_equipo.add(nodo_ciudad);
+        nodo_pais.add(nodo_equipo);
+        raiz.add(nodo_pais);
+        m.reload();
+
+    }//GEN-LAST:event_bt_CargarInfoMouseClicked
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -188,6 +242,7 @@ public class Transferencias extends javax.swing.JFrame {
     private javax.swing.JTree ArbolEquipos;
     private javax.swing.JMenuItem Editar;
     private javax.swing.JMenuItem Eliminar;
+    private javax.swing.JButton bt_CargarInfo;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -4,14 +4,16 @@ import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 public class NuevoEquipo extends javax.swing.JFrame {
-    
+
     static ArrayList<Equipos> equipos = new ArrayList<>();
-    
+
     public NuevoEquipo() {
         initComponents();
         this.setResizable(false);
     }
-    
+    public void setLista(ArrayList<Equipos> equipos) {
+        this.equipos = equipos;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -97,8 +99,14 @@ public class NuevoEquipo extends javax.swing.JFrame {
         tf_NombreEquipo.setText("");
         tf_CiudadEquipo.setText("");
         tf_CiudadEquipo.setText("");
+        Transferencias trabita = new Transferencias();
+        trabita.Equipos(equipos);
+        trabita.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jButton1MouseClicked
-    
+
+
+
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
