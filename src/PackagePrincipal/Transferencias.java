@@ -21,11 +21,6 @@ public class Transferencias extends javax.swing.JFrame {
     public Transferencias() {
         initComponents();
         this.setResizable(false);
-        if (!listajugadores.isEmpty()) {
-            DefaultListModel modelo = (DefaultListModel) jl_jugadores.getModel();
-            Jugador primerJugador = listajugadores.get(0);
-            modelo.addElement(primerJugador.getNombre());
-        }
     }
 
     @SuppressWarnings("unchecked")

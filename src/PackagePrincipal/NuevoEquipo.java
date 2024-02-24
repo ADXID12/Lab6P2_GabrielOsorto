@@ -11,7 +11,7 @@ public class NuevoEquipo extends javax.swing.JFrame {
         initComponents();
         this.setResizable(false);
     }
-    public void setLista(ArrayList<Equipos> equipos) {
+    public void NuevoEquipo(ArrayList<Equipos> equipos) {
         this.equipos = equipos;
     }
     @SuppressWarnings("unchecked")

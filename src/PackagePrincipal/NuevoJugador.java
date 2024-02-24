@@ -13,7 +13,9 @@ public class NuevoJugador extends javax.swing.JFrame {
         SpinnerNumberModel sp = new SpinnerNumberModel(15, 15, 35, 1);
         sp_EdadJugador.setModel(sp);
     }
-
+    public void NuevoJugador(ArrayList<Jugador> jugadores) {
+        this.jugadores = jugadores;
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
